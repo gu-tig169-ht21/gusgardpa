@@ -62,8 +62,8 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
           child: const Icon(Icons.add),
           onPressed: () {
-            Navigator.push(
-                context, MaterialPageRoute(builder: (context) => SecondView()));
+            Navigator.push(context,
+                MaterialPageRoute(builder: (context) => const SecondView()));
           }),
     );
   }
@@ -107,12 +107,14 @@ class _MyHomePageState extends State<MyHomePage> {
 }
 
 class SecondView extends StatelessWidget {
+  const SecondView({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: Text('TIG169 TODO'),
+          title: const Text('TIG169 TODO'),
         ),
         body: Center(
           child: Column(
