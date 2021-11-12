@@ -33,12 +33,7 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(centerTitle: true, title: Text(widget.title), actions: [
-        IconButton(
-            icon: const Icon(Icons.more_vert),
-            onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => SecondView()));
-            })
+        IconButton(icon: const Icon(Icons.more_vert), onPressed: () {})
       ]),
       body: Center(
         child: Column(
@@ -64,8 +59,12 @@ class _MyHomePageState extends State<MyHomePage> {
           ],
         ),
       ),
-      floatingActionButton:
-          FloatingActionButton(child: const Icon(Icons.add), onPressed: () {}),
+      floatingActionButton: FloatingActionButton(
+          child: const Icon(Icons.add),
+          onPressed: () {
+            Navigator.push(
+                context, MaterialPageRoute(builder: (context) => SecondView()));
+          }),
     );
   }
 
@@ -101,13 +100,11 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Widget _divide() {
     return const Divider(
-      height: 15,
+      height: 10,
       thickness: 1,
     );
   }
 }
-
-/* **************************  SECOND VIEW ********************* */
 
 class SecondView extends StatelessWidget {
   @override
