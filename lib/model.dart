@@ -2,18 +2,30 @@ import 'package:flutter/material.dart';
 
 class Task {
   String taskName;
-  Color color = Colors.blue;
+  bool isComplete;
 
-  Task({required this.taskName, required this.color});
+  Task({required this.taskName, this.isComplete = false});
 }
 
 class MyState extends ChangeNotifier {
-  late List<Task> _list = [];
+  final List<Task> _list = [];
+  int _filter = 0;
 
   List<Task> get list => _list;
+  int get filterBy => _filter;
 
-  void addTask(Task task) {
-    _list.add(task);
+  void addTask(Task taskName) {
+    _list.add(taskName);
+    notifyListeners();
+  }
+
+  void updateTask(Task task, value) {
+    task.isComplete = value;
+    notifyListeners();
+  }
+
+  void filter(int filter) {
+    _filter = filter;
     notifyListeners();
   }
 
