@@ -24,7 +24,7 @@ class AddTaskView extends StatelessWidget {
               onPressed: () {
                 text = textEditingController.text;
                 Provider.of<MyState>(context, listen: false)
-                    .addTask(Task(taskName: text));
+                    .addTask(Task(id: '', taskName: text));
                 textEditingController.clear();
               },
               child: const Text(
