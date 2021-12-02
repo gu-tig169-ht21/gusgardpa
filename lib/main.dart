@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import './task_list_view.dart';
-import 'model.dart';
+import './model.dart';
 
 void main() {
   var state = MyState();
   state.getList();
 
-  runApp(ChangeNotifierProvider(create: (context) => state, child: MyApp()));
+  runApp(
+      ChangeNotifierProvider(create: (context) => state, child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity),
-      home: TaskListView(),
+      home: const TaskListView(),
     );
   }
 }
