@@ -32,24 +32,6 @@ class AddTaskView extends StatelessWidget {
                 '+ADD',
                 style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
               ))
-          //  _button()
         ])));
   }
-
-  /*Widget _button() {
-    return TextButton(
-        style: ButtonStyle(
-          foregroundColor: MaterialStateProperty.all<Color>(Colors.black),
-        ),
-        onPressed: () {
-          text = textEditingController.text;
-          Provider.of<MyState>(context, listen: false)
-              .addTask(Task(taskName: text));
-          textEditingController.clear();
-        },
-        child: const Text(
-          '+ADD',
-          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-        ));
-  }*/
 }
