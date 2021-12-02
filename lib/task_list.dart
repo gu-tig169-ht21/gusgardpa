@@ -22,7 +22,10 @@ class TaskList extends StatelessWidget {
               Provider.of<MyState>(context, listen: false)
                   .updateTask(task, value);
             }),
-        title: Text(task.taskName),
+        title: Text(task.taskName,
+            style: (TextStyle(
+                decoration:
+                    task.isComplete ? TextDecoration.lineThrough : null))),
         trailing: IconButton(
             icon: const Icon(Icons.close),
             onPressed: () {
